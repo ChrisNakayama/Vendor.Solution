@@ -59,5 +59,12 @@ namespace PVOT.Tests
       List<Order> allOrders = new List<Order> {newOrder, anotherOrder};
       CollectionAssert.AreEqual(allOrders, Order.GetAll());
     }
+    [TestMethod]
+    public void Find_ReturnsSpecificOrder_Order()
+    {
+      Order newOrder = new Order("Order 1", "10 bread, 50 pastries", 45.00, "2022-02-25");
+      Order anotherOrder = new Order("Order 2", "5 bread, 25 pastries", 22.50, "2022-02-26");
+      Assert.AreEqual(newOrder, Order.Find(1));
+    }
   }
   }

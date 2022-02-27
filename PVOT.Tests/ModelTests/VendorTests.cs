@@ -69,6 +69,15 @@ namespace PVOT.Tests
       Vendor anotherVendor = new Vendor("Jamie P", "Florest");
       Assert.AreEqual(anotherVendor, Vendor.Find(2));
     }
+    [TestMethod]
+    public void AddOrder_AddOrderToSpecificVendor_OrderList()
+    {
+      Vendor newVendor = new Vendor("Tanner H", "Coffee Shop");
+      Order newOrder = new Order("Order 1", "10 bread, 50 pastries", 45.00, "2022-02-25");
+      List<Order> vendorOrders = new List<Order> {newOrder};
+      newVendor.AddOrder(newOrder);
+      CollectionAssert.AreEqual(vendorOrders, newVendor.Orders);
+    }
   }
 }
   

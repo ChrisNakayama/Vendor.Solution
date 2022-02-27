@@ -20,6 +20,20 @@ namespace PVOT.Tests
       Vendor newVendor = new Vendor("Chris N", "Coffee Shop ");
       Assert.AreEqual("Chris N", newVendor.Name);
     }
+    [TestMethod]
+    public void SetName_ReturnsUpdatedName_String()
+    {
+      Vendor newVendor = new Vendor("Chris N", "Coffee Shop");
+      newVendor.Name = "Tanner H";
+      Assert.AreEqual("Tanner H", newVendor.Name);
+    }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      Vendor newVendor = new Vendor("Tanner H", "Coffee Shop");
+      Assert.AreEqual("Coffee Shop", newVendor.Description);
+    }
   }
 }
   

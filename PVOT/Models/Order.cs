@@ -28,6 +28,10 @@ namespace PVOT.Models
     {
       return _instances;
     }
+    public static Order Find(int num)
+    {
+      return _instances[num - 1];
+    }
 
   }
 }

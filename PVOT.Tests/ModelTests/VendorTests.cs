@@ -54,6 +54,21 @@ namespace PVOT.Tests
       List<Vendor> vendorList = new List<Vendor> {newVendor, anotherVendor};
       CollectionAssert.AreEqual(vendorList, Vendor.GetAll());
     }
+    [TestMethod]
+    public void GetId_ReturnsId_Int()
+    {
+      Vendor newVendor = new Vendor("Tanner H", "Coffee Shop");
+      Vendor anotherVendor = new Vendor("Jamie P", "Florest");
+      Assert.AreEqual(2, anotherVendor.Id);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsSpecificVendor_Vendor()
+    {
+      Vendor newVendor = new Vendor("Tanner H", "Coffee Shop");
+      Vendor anotherVendor = new Vendor("Jamie P", "Florest");
+      Assert.AreEqual(anotherVendor, Vendor.Find(2));
+    }
   }
 }
   

@@ -44,5 +44,20 @@ namespace PVOT.Tests
       Order newOrder = new Order("Order 1", "10 bread, 50 pastries", 45.00, "2022-02-25");
       Assert.AreEqual("2022-02-25", newOrder.Date);
     }
+    [TestMethod]
+    public void GetId_ReturnId_Integer()
+    {
+      Order newOrder = new Order("Order 1", "10 bread, 50 pastries", 45.00, "2022-02-25");
+      Assert.AreEqual(1, newOrder.Id);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllOrders_OrdersList()
+    {
+      Order newOrder = new Order("Order 1", "10 bread, 50 pastries", 45.00, "2022-02-25");
+      Order anotherOrder = new Order("Order 2", "5 bread, 25 pastries", 22.50, "2022-02-26");
+      List<Order> allOrders = new List<Order> {newOrder, anotherOrder};
+      CollectionAssert.AreEqual(allOrders, Order.GetAll());
+    }
   }
   }

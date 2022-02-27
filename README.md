@@ -1,6 +1,6 @@
 # Vendor and Order Tracker
 
-#### Track Vendors and their Orders for Pierre.
+#### Pierre's Vendor Order Tracker PVOT
 
 #### By Chris Nakayama
 
